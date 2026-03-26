@@ -2,7 +2,7 @@ name: Tetris DevSecOps Pipeline
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   workflow_dispatch:
 
 env:
@@ -25,18 +25,18 @@ jobs:
         with:
           node-version: '18'
 
-      - name: SonarQube Scan
+      - name: SonarCloud Scan
         uses: SonarSource/sonarqube-scan-action@master
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         with:
           projectBaseDir: Tetris-V2
           args: >
+            -Dsonar.organization=dragerzw
             -Dsonar.projectName=Tetris
             -Dsonar.projectKey=Tetris
 
-      - name: SonarQube Quality Gate Check
+      - name: SonarCloud Quality Gate Check
         uses: SonarSource/sonarqube-quality-gate-action@v1.2.0
         timeout-minutes: 5
         env:
