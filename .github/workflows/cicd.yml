@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  GIT_REPO_NAME: "End-to-End-Kubernetes-DevSecOps-Tetris-Project"
+  GIT_REPO_NAME: "EKS-DevSecOps-GitOps-Pipeline--Tetris"
   GIT_USER_NAME: "dragerzw"
   IMAGE_NAME: "realdrager/tetrisv1"
 
@@ -35,7 +35,7 @@ jobs:
           args: >
             -Dsonar.organization=dragerzw
             -Dsonar.projectName=Tetris
-            -Dsonar.projectKey=dragerzw_DevSecOps-Tetris-Project
+            -Dsonar.projectKey=dragerzw_EKS-DevSecOps-GitOps-Pipeline--Tetris
 
       - name: SonarCloud Quality Gate Check
         uses: SonarSource/sonarqube-quality-gate-action@v1.2.0

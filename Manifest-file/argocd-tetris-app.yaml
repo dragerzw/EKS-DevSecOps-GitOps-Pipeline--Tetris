@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/dragerzw/End-to-End-Kubernetes-DevSecOps-Tetris-Project.git'
+    repoURL: 'https://github.com/dragerzw/EKS-DevSecOps-GitOps-Pipeline--Tetris.git'
     targetRevision: main
     path: Manifest-file
   destination:
