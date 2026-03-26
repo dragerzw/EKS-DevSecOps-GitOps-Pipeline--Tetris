@@ -82,7 +82,7 @@ kubectl apply -f Manifest-file/argocd-tetris-app.yaml
 
 ---
 
-## 🧠 Challenges & Engineering Insights (Resume-Boosting)
+## 🧠 Challenges & Engineering Insights
 
 Overcoming these high-level technical hurdles demonstrated advanced DevSecOps engineering expertise:
 
@@ -90,18 +90,6 @@ Overcoming these high-level technical hurdles demonstrated advanced DevSecOps en
 *   **Fine-Grained IAM & GitHub Security Convergence**: Architected a secure cross-platform authentication flow. Resolved 403 API permission escalations by implementing precisely-scoped GitHub Personal Access Tokens (PATs) that allow the CI runner to safely update repository manifests while maintaining the **Principle of Least Privilege**.
 *   **Scaling Kubernetes Control Planes**: Addressed Kubernetes API manifest size limitations during the bootstrapping of complex GitOps controllers. Leveraged **Server-Side Apply** strategies and conflict-resolution flags to safely install large Custom Resource Definitions (CRDs) for ArgoCD.
 *   **CI Pipeline Resilience & Debugging**: Identified and remediated broken third-party action dependencies (OWASP Dependency-Check SHA-pinning failures). Modularized the pipeline to handle stale upstream references without compromising security thresholds.
-
----
-
-## 📝 Resume-Ready Project Summary
-
-Use the following bullet points for your **Projects** section:
-
-*   **Architected and Automated Infrastructure as Code (IaC)**: Engineered a self-contained, idempotent **Terraform** module to provision a production-grade AWS environment including VPC, Internet Gateway, Subnets, and an EKS Cluster from scratch.
-*   **Orchestrated High-Performance CI/CD Pipelines**: Developed a dual-path automation engine in **GitHub Actions** for both infrastructure deployment and application security, achieving a zero-touch "push-to-deploy" workflow.
-*   **Implemented a Multi-Layer Security "Safe Belt"**: Integrated **SonarCloud (SAST)** for static analysis, **OWASP Dependency-Check (SCA)** for third-party vulnerability detection, and **Trivy** for high-precision filesystem and Docker image scanning.
-*   **Pioneeered GitOps Continuous Delivery**: Bootstrapped **ArgoCD** as the in-cluster GitOps controller, managing declarative application synchronization and automated self-healing of the EKS environment.
-*   **Resolved Advanced Kubernetes Orchestration Challenges**: Leveraged **Server-Side Apply** strategies to manage complex CRD installations and configured fine-grained **GitHub PAT scopes** to safely automate manifest updates while adhering to the **PoLP (Principle of Least Privilege)**.
 
 ---
 
