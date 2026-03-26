@@ -47,7 +47,7 @@ jobs:
         run: npm install
 
       - name: OWASP Dependency Check
-        uses: dependency-check/Dependency-Check_Action@b8eb2d2da8f13fb45be7e31b67f1b27914bf689f # v1.1.0
+        uses: dependency-check/Dependency-Check_Action@main # v1.1.0
         with:
           project: 'Tetris'
           path: './Tetris-V2'
