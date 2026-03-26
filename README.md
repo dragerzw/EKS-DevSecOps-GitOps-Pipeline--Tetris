@@ -4,7 +4,6 @@ This project demonstrates the implementation of a secure, automated pipeline for
 
 <img width="2816" height="1536" alt="Gemini_Generated_Image_pzuw07pzuw07pzuw (1)" src="https://github.com/user-attachments/assets/3be06da7-d92f-411b-b047-2fd225780996" />
 
-
 ## Core Objectives
 
 The following technical milestones were achieved in this project:
@@ -57,6 +56,12 @@ Configure the following secrets in your repository settings:
   kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
   kubectl apply -f Manifest-file/argocd-tetris-app.yaml
   ```
+
+## Technical Challenges & Resolutions
+
+- **Dynamic Infrastructure Configuration**: Refactored Terraform modules from static data-source dependency lookups to dynamic resource provisioning. This ensured a fully standalone VPC/EKS deployment without circular dependencies in fresh AWS environments.
+- **Kubernetes API Scaling & CRDs**: Overcame manifest size limitations during ArgoCD installation by leveraging **Server-Side Apply** strategies and manual conflict resolution for high-density Custom Resource Definitions (CRDs).
+- **Automated Workflow Authorization**: Resolved cross-platform 403 authorization escalations by configuring fine-grained GitHub Personal Access Token (PAT) scopes, enabling secure automated manifest updates within the continuous deployment lifecycle.
 
 ## Infrastructure Management & Cleanup
 
