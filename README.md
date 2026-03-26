@@ -20,18 +20,19 @@ This project implements a **True DevSecOps Lifecycle**, ensuring security and pe
 
 ---
 
-## 🛠️ Technology Stack Matrix
+## 🛠️ Technical Skills & Tooling Matrix
 
 | Category | Tool | Implementation |
 | :--- | :--- | :--- |
-| **Cloud Infrastructure** | AWS | Elastic Kubernetes Service (EKS) & VPC |
-| **IaC** | Terraform | HashiCorp HCL for Network & Cluster |
-| **Automation / CI** | GitHub Actions | Dual-Path Pipelines (`cicd.yml` & `terraform.yml`) |
-| **Static Analysis (SAST)** | SonarCloud | Quality Gates for code smell & bug detection |
-| **SCA Security** | OWASP | Dependency-Check for open-source vulnerability scanning |
-| **Container Security** | Trivy | High-precision scanning of filesystems & Docker images |
-| **Containerization** | Docker | Multi-stage image building & registry management |
-| **GitOps / CD** | ArgoCD | Declarative, automated cluster synchronization |
+| **Cloud Infrastructure** | **AWS (EKS, VPC, IAM, S3)** | Managed Kubernetes, networking, and state persistence |
+| **IaC / Automation** | **Terraform** | HashiCorp HCL for infrastructure-as-code |
+| **CI / CD Orchestration** | **GitHub Actions** | Automated, secure multi-stage deployment pipelines |
+| **Code Quality (SAST)** | **SonarCloud** | Automated static code analysis & quality gates |
+| **SCA Security** | **OWASP Dependency-Check** | Tracking vulnerable dependencies in open-source libraries |
+| **Container Security** | **Trivy** | Scanning for OS-level and application vulnerabilities |
+| **Containerization** | **Docker** | Multi-stage builds and image registry management |
+| **GitOps Delivery** | **ArgoCD** | Automated, declarative cluster state synchronization |
+| **Monitoring / Ops** | **AWS CloudWatch & Logs** | Essential for cluster and application health |
 
 ---
 
@@ -92,11 +93,23 @@ Overcoming these high-level technical hurdles demonstrated advanced DevSecOps en
 
 ---
 
+## 📝 Resume-Ready Project Summary
+
+Use the following bullet points for your **Projects** section:
+
+*   **Architected and Automated Infrastructure as Code (IaC)**: Engineered a self-contained, idempotent **Terraform** module to provision a production-grade AWS environment including VPC, Internet Gateway, Subnets, and an EKS Cluster from scratch.
+*   **Orchestrated High-Performance CI/CD Pipelines**: Developed a dual-path automation engine in **GitHub Actions** for both infrastructure deployment and application security, achieving a zero-touch "push-to-deploy" workflow.
+*   **Implemented a Multi-Layer Security "Safe Belt"**: Integrated **SonarCloud (SAST)** for static analysis, **OWASP Dependency-Check (SCA)** for third-party vulnerability detection, and **Trivy** for high-precision filesystem and Docker image scanning.
+*   **Pioneeered GitOps Continuous Delivery**: Bootstrapped **ArgoCD** as the in-cluster GitOps controller, managing declarative application synchronization and automated self-healing of the EKS environment.
+*   **Resolved Advanced Kubernetes Orchestration Challenges**: Leveraged **Server-Side Apply** strategies to manage complex CRD installations and configured fine-grained **GitHub PAT scopes** to safely automate manifest updates while adhering to the **PoLP (Principle of Least Privilege)**.
+
+---
+
 ## 💰 Cleanup & Cost Management
 To avoid unexpected AWS charges, always decommission your resources when finished:
 
 1.  **Delete the GitOps application**: `kubectl delete -f Manifest-file/argocd-tetris-app.yaml`
-2.  **Destroy Infrastructure**: Navigate to `EKS-TF/` and run `terraform destroy -var-file=variables.tfvars` (or trigger it via the Terraform workflow if configured).
+2.  **Destroy Infrastructure**: Navigate to `EKS-TF/` and run `terraform destroy -var-file=variables.tfvars`
 3.  **Delete S3 Backend (Manual)**: Remove the `dragops-tf-bucket` in S3 to clean up state persistence.
 
 ---
